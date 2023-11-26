@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap" rel="stylesheet">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&family=Zen+Kaku+Gothic+Antique&display=swap');
+ 
+  a {
+    text-decoration: none;
+  }
+  body {
+    background-image: url(/page/src/websitepage/importphoto/pexels-yasin-cesur-5610466.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100%;
+  }
+
+  
+  nav {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-image: linear-gradient(319deg, rgb(98, 241, 79) 0%, #4fc45d 37%, #42b37a 100%);
+    box-sizing: border-box;
+    justify-content: space-between;
+    color:rgb(129, 219, 117);
+    height: 65px;
+    align-items: center;
+    z-index: 1000;
+
+}
+
+nav .logo {
+    font-family: 'pacifico', cursive;
+    letter-spacing: 3px;
+}
+
+nav .logo img {
+    display: flex;
+    width: 150px;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+    width: 40%;
+    justify-content: space-between;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(255, 255, 255); /* Change the background color as needed */
+    box-shadow: 0 8px 16px rgba(230, 221, 221, 0.2);
+    z-index: 1;
+}
+.dropdown-content a {
+    color: #333; /* Change the color as needed */
+    padding: 12px 16px;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+nav ul li a:hover {
+    color: rgb(17, 18, 16);
+}
+
+/* Hamburger Menu*/
+.menu-toogle {
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+}
+
+.menu-toogle input {
+    position: absolute;
+    width: 40px;
+    height: 30px;
+    left: -6px;
+    top: -4px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.menu-toogle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: rgb(159, 147, 147);
+    border-radius: 3px;
+    transition: all 0.5s;
+}
+
+/* Hamburger Menu Animation */
+.menu-toogle span:nth-child(2) {
+    transform-origin: 0 0;
+}
+.menu-toogle span:nth-child(4) {
+    transform-origin: 0 100%;
+
+}
+
+.menu-toogle input:checked ~ span:nth-child(2) {
+    background-color: white;
+    transform: rotate(45deg) translate(-1px,-1px);
+
+}
+
+.menu-toogle input:checked ~ span:nth-child(4) {
+    background-color: white;
+    transform: rotate(-45deg) translate(-1px, 0);
+
+}
+
+.menu-toogle input:checked ~ span:nth-child(3) {
+    opacity: 0;
+    transform: scale(0);
+}
+
+nav {
+    display: flex;
+    background-image: linear-gradient(319deg, rgb(98, 241, 79) 0%, #4fc45d 37%, #42b37a 100%);
+    justify-content: space-around;
+    color:rgb(11, 19, 10);
+    height: 65px;
+    align-items: center;
+
+}
+
+nav .logo {
+    font-family: 'pacifico', cursive;
+    letter-spacing: 3px;
+}
+
+nav .logo img {
+    display: flex;
+    width: 150px;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    width: 40%;
+    justify-content: space-between;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+nav ul li a:hover {
+    color: rgb(228, 131, 21);
+}
+
+/* Hamburger Menu*/
+.menu-toogle {
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+}
+
+.menu-toogle input {
+    position: absolute;
+    width: 40px;
+    height: 30px;
+    left: -6px;
+    top: -4px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.menu-toogle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: black;
+    border-radius: 3px;
+    transition: all 0.5s;
+}
+
+/* Hamburger Menu Animation */
+.menu-toogle span:nth-child(2) {
+    transform-origin: 0 0;
+
+}
+
+.menu-toogle span:nth-child(4) {
+    transform-origin: 0 100%;
+
+}
+
+.menu-toogle input:checked ~ span:nth-child(2) {
+    background-color: white;
+    transform: rotate(45deg) translate(-1px,-1px);
+
+}
+
+.menu-toogle input:checked ~ span:nth-child(4) {
+    background-color: white;
+    transform: rotate(-45deg) translate(-1px, 0);
+
+}
+
+.menu-toogle input:checked ~ span:nth-child(3) {
+    opacity: 0;
+    transform: scale(0);
+}
+
+
+
+label {
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    font-size: 11pt;
+}
+
+#forgot-pass {
+    color: #2dbd6e;
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    font-size: 10pt;
+    margin-top: 3px;
+    text-align: right;
+}
+
+#card {
+    background: #fbfbfb;
+    border-radius: 11px;
+    box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
+    height: 810px;
+    margin: 6rem auto 8.1rem auto;
+    width: 329px;
+}
+  
+#card-content {
+    padding: 12px 44px;
+}
+  
+#card-title {
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    letter-spacing: 4px;
+    padding-bottom: 23px;
+    padding-top: 13px;
+    text-align: center;
+}
+  
+#signup {
+    color: #2dbd6e;
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    font-size: 10pt;
+    margin-top: 16px;
+    text-align: center;
+}
+  
+#submit-btn {
+    background: linear-gradient(319deg, rgb(98, 241, 79) 0%, #4fc45d 37%, #42b37a 100%);
+    border: none;
+    border-radius: 21px;
+    box-shadow: 0px 1px 8px #24c64f;
+    cursor: pointer;
+    color: white;
+    font-family: "Raleway SemiBold", sans-serif;
+    height: 42.3px;
+    margin: 0 auto;
+    margin-top: 50px;
+    transition: 0.25s;
+    width: 153px;
+}
+  
+#submit-btn:hover {
+    box-shadow: 0px 1px 18px #24c64f;
+}
+  
+.form {
+    align-items: left;
+    display: flex;
+    flex-direction: column;
+}
+  
+.form-border {
+    background: linear-gradient(319deg, rgb(98, 241, 79) 0%, #4fc45d 37%, #42b37a 100%);
+    height: 1px;
+    width: 100%;
+}
+  
+.form-content {
+    background: #fbfbfb;
+    border: none;
+    outline: none;
+    padding-top: 14px;
+}
+  
+.underline-title {
+    background: linear-gradient(319deg, rgb(98, 241, 79) 0%, #4fc45d 37%, #42b37a 100%);
+    height: 2px;
+    margin: -1.1rem auto 0 auto;
+    width: 89px;
+}
+
+/* Size Hp */
+@media screen and (max-width: 576px){
+  .menu-toogle {
+      display: flex;
+  }
+  
+  nav ul {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 80%;
+  height: 100vh;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(91, 214, 74);
+  transform: translateX(100%);
+  transition: all 1s;
+  opacity: 0;
+  }
+
+  nav ul.slide {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+</style>
+
+<body>
+  <nav>
+    <div class="logo">
+        <img src="/page/src/websitepage/importphoto/logo.png" alt="logo" />
+    </div>
+
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+            <div class="dropdown-btn">Jelajahi &#9660;</div>
+            <div class="dropdown-content">
+                <a href="#Jelajah Bukit">Jelajah Bukit</a>
+                <a href="#Galeri">Galeri</a>
+                <a href="#Rekomendasi">Rekomendasi</a>
+                <a href="#Profile">Profile</a>
+            </div>
+        </li>
+        <li class="dropdown">
+            <div class="dropdown-btn">Reservasi &#9660;</div>
+            <div class="dropdown-content">
+                <a href="#TiketMasuk">Tiket Masuk</a>
+                <a href="#MejaCafe">Meja Cafe</a>
+                <a href="#Riwayat">Riwayat</a>
+            </div>
+        </li>
+        <li><a href="informasi.html">Informasi</a></li>
+        <li><a href="login.html">Login</a></li>
+    </ul>
+
+    <script>
+        function navigateTo(page) {
+            window.location.href = page;
+        }
+
+        document.querySelector('.dropdown-content a[href="#Jelajah Bukit"]').addEventListener('click', function () {
+            navigateTo('jelajah-bukit.html');
+        });
+        document.querySelector('.dropdown-content a[href="#Galeri"]').addEventListener('click', function () {
+        navigateTo('galeri.html');
+        });
+
+        document.querySelector('.dropdown-content a[href="#Rekomendasi"]').addEventListener('click', function () {
+        navigateTo('rekomendasi.html');
+        });
+        document.querySelector('.dropdown-content a[href="#About Us"]').addEventListener('click', function () {
+        navigateTo('Abous Us.html');
+        });
+    </script>
+
+    <script>
+        document.querySelector('.dropdown-content a[href="#TiketMasuk"]').addEventListener('click', function () {
+            navigateTo('tiket-masuk.html'); // Replace 'tiket-masuk.html' with the actual URL for Tiket Masuk
+        });
+
+        document.querySelector('.dropdown-content a[href="#MejaCafe"]').addEventListener('click', function () {
+            navigateTo('meja-cafe.html'); // Replace 'meja-cafe.html' with the actual URL for Meja Cafe
+        });
+
+        document.querySelector('.dropdown-content a[href="#Riwayat"]').addEventListener('click', function () {
+            navigateTo('riwayat.html'); // Replace 'riwayat.html' with the actual URL for Riwayat
+        });
+    </script>
+
+    <div class="menu-toogle">
+        <input type="checkbox"></input>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+  </nav>
+
+  <div id="card">
+    <div id="card-content">
+      <div id="card-title">
+        <h2>LOGIN</h2>
+        <div class="underline-title"></div>
+      </div>
+      <form method="post" class="form">
+        <label for="user-email" style="padding-top:13px">
+            &nbsp;Email
+          </label>
+        <input id="user-email" class="form-content" type="email" name="email" autocomplete="on" required />
+        <div class="form-border"></div>
+        <label for="user-password" style="padding-top:22px">&nbsp;Password
+          </label>
+        <input id="user-password" class="form-content" type="password" name="password" required />
+        <div class="form-border"></div>
+        <a href="#">
+          <legend id="forgot-pass">Forgot password?</legend>
+        </a>
+        <input id="submit-btn" type="submit" name="submit" value="LOGIN"/> <a href="home.html">Login</a>
+        <a href="signup.html" id="signup">New User? SIGN UP HERE</a>
+      </form>
+    </div>
+  </div>
+
+  <!-- Include Js -->
+  <script src="script.js"></script>
+</body>
+</html>

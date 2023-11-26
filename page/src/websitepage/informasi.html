@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>informasi</title>
+</head>
+    <style>
+        :root {
+            --primary: rgb(98, 241, 79);
+            --bg: #010101;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            outline: none;
+            border: none;
+        }
+        
+        body {
+            font-family: 'poppins', sans-serif;
+            overflow-x: hidden;
+            min-height: 2500px;
+            background-color: gainsboro;
+        }
+        
+        /* Your existing styles */
+        .container {
+            width: 100%;
+            height: 50%;
+            background: rgb(162, 183, 160);
+            border-radius: 20px;
+        }
+
+        .content {
+            width: 100%;
+            height: 100%;
+            text-align: justify;
+            color: black;
+            font-size: 18px;
+            font-family: Montserrat;
+            font-weight: 700;
+            letter-spacing: 1.50px;
+            word-wrap: break-word;
+        }
+
+        nav {
+            position: fixed;
+            display: flex;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-image: linear-gradient(319deg, rgb(98, 241, 79) 0%, #4fc45d 37%, #42b37a 100%);
+            box-sizing: border-box;
+            justify-content: space-between;
+            color:rgb(129, 219, 117);
+            height: 65px;
+            align-items: center;
+            z-index: 1000;
+        
+        }
+        
+        nav .logo {
+            font-family: 'pacifico', cursive;
+            letter-spacing: 3px;
+        }
+        
+        nav .logo img {
+            display: flex;
+            width: 150px;
+            align-items: center;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 20px;
+            width: 40%;
+            justify-content: space-between;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgb(255, 255, 255); /* Change the background color as needed */
+            box-shadow: 0 8px 16px rgba(230, 221, 221, 0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: #333; /* Change the color as needed */
+            padding: 12px 16px;
+            display: block;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        nav ul li a {
+            color: black;
+            text-decoration: none;
+            font-size: 1.1em;
+        }
+        
+        nav ul li a:hover {
+            color: rgb(17, 18, 16);
+        }
+        
+        /* Hamburger Menu*/
+        .menu-toogle {
+            display: none;
+            flex-direction: column;
+            height: 20px;
+            justify-content: space-between;
+            position: relative;
+        }
+        
+        .menu-toogle input {
+            position: absolute;
+            width: 40px;
+            height: 30px;
+            left: -6px;
+            top: -4px;
+            opacity: 0;
+            cursor: pointer;
+            z-index: 2;
+        }
+        
+        .menu-toogle span {
+            display: block;
+            width: 28px;
+            height: 3px;
+            background-color: rgb(159, 147, 147);
+            border-radius: 3px;
+            transition: all 0.5s;
+        }
+        
+        /* Hamburger Menu Animation */
+        .menu-toogle span:nth-child(2) {
+            transform-origin: 0 0;
+        }
+        .menu-toogle span:nth-child(4) {
+            transform-origin: 0 100%;
+        
+        }
+        
+        .menu-toogle input:checked ~ span:nth-child(2) {
+            background-color: white;
+            transform: rotate(45deg) translate(-1px,-1px);
+        
+        }
+        
+        .menu-toogle input:checked ~ span:nth-child(4) {
+            background-color: white;
+            transform: rotate(-45deg) translate(-1px, 0);
+        
+        }
+        
+        .menu-toogle input:checked ~ span:nth-child(3) {
+            opacity: 0;
+            transform: scale(0);
+        }
+        
+        nav {
+            display: flex;
+            background-image: linear-gradient(319deg, rgb(98, 241, 79) 0%, #4fc45d 37%, #42b37a 100%);
+            justify-content: space-around;
+            color:rgb(11, 19, 10);
+            height: 65px;
+            align-items: center;
+        
+        }
+        
+        nav .logo {
+            font-family: 'pacifico', cursive;
+            letter-spacing: 3px;
+        }
+        
+        nav .logo img {
+            display: flex;
+            width: 150px;
+            align-items: center;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            width: 40%;
+            justify-content: space-between;
+        }
+        
+        nav ul li a {
+            color: black;
+            text-decoration: none;
+            font-size: 1.1em;
+        }
+        
+        nav ul li a:hover {
+            color: rgb(228, 131, 21);
+        }
+        
+        /* Hamburger Menu*/
+        .menu-toogle {
+            display: none;
+            flex-direction: column;
+            height: 20px;
+            justify-content: space-between;
+            position: relative;
+        }
+        
+        .menu-toogle input {
+            position: absolute;
+            width: 40px;
+            height: 30px;
+            left: -6px;
+            top: -4px;
+            opacity: 0;
+            cursor: pointer;
+            z-index: 2;
+        }
+        
+        .menu-toogle span {
+            display: block;
+            width: 28px;
+            height: 3px;
+            background-color: black;
+            border-radius: 3px;
+            transition: all 0.5s;
+        }
+        
+        /* Hamburger Menu Animation */
+        .menu-toogle span:nth-child(2) {
+            transform-origin: 0 0;
+        
+        }
+        
+        .menu-toogle span:nth-child(4) {
+            transform-origin: 0 100%;
+        
+        }
+        
+        .menu-toogle input:checked ~ span:nth-child(2) {
+            background-color: white;
+            transform: rotate(45deg) translate(-1px,-1px);
+        
+        }
+        
+        .menu-toogle input:checked ~ span:nth-child(4) {
+            background-color: white;
+            transform: rotate(-45deg) translate(-1px, 0);
+        
+        }
+        
+        .menu-toogle input:checked ~ span:nth-child(3) {
+            opacity: 0;
+            transform: scale(0);
+        }
+
+        
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background-image: url('/page/src/websitepage/importphoto/img_baru.svg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .hero::after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 30%;
+            bottom: 0;
+            top: 73%;
+            background: linear-gradient(0deg, rgba(1,1,3,1) 9%, rgba(255,255,255, 0) 40%);
+        }
+
+        /* About Section*/
+        .about, .event {
+            padding: 5rem 7% 1.4rem;
+        }
+
+        .about h2 , .event h2{
+            text-align: center;
+            font-size: 2.6rem;
+            margin-bottom: 3rem;
+        }
+
+        .about h2 span, .event h2 span {
+            color: var(--primary);
+        }
+
+        .about .row1 , .about .row2 , .about .row3{
+            display: flex;
+        } 
+
+        .about .row1 .about-img1, .about .row2 .about-img2, .about .row3 .about-img3{
+            flex: 1 1 45rem;
+        }   
+
+        .about .row1 .about-img1 img, .about .row2 .about-img2 img, .about .row3 .about-img3 img {
+            display: inline-block;
+            border-radius: 0.7rem;
+            width: 100%;
+        }
+
+        .about .row1 .content, .about .row2 .berita2, .about .row3 .berita3 {
+            flex: 1 1 35rem;
+            padding: 0 2rem;
+            font-family: monserratreguler ;
+        }
+
+        .about .row1 .content h5, .about .row2 .berita2 h5, .about .row3 .berita3 h5 {
+            font-size: 1.1rem;
+            color: rgb(194, 15, 15) ;
+            line-height: 1.5;
+        }
+
+        .about .row1 .content h4, .about .row2 .berita2 h4, .about .row3 .berita3 h4 {
+            font-size: 1rem;
+        }
+        .about .row1 .content h3, .about .row2 .berita2 h3, .about .row3 .berita3 h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            align-items: center;
+            line-height: 1.1;
+        }
+
+        .about .row1 .content p {
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+            font-weight: 100;
+            line-height: 1;
+        }
+
+        .about .row2 .berita2 p, .about .row3 .berita3 p  {
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+            font-weight: 100;
+            line-height: 1;
+        }
+
+        .about .row1 .content a, .about .row2 .berita2 a, .about .row3 .berita3 a {
+            font-family: monserratreguler;
+            line-height: 0.7;
+            display: inline-block;
+            padding: 1rem 2rem;
+            font-size: 0.7rem;
+            color: #010101;
+            background-color: var(--primary);
+            border-radius: 0.7rem;
+            box-shadow: 1px 1px 3px rgba(1,1,3, 0.5);
+            text-decoration: none;
+        } 
+
+                
+        .event .row .textbox1, .event .row .textbox2, .event .row .textbox3, .about .row .textbox4 {
+            font-family: monserratreguler ;
+            border: 1px solid orange;
+            background-color: #f3f3f3;
+            border-radius: 0.5rem;
+            padding: 10px;
+            margin-top: 25px;
+            text-align: justify;
+            max-width: 30rem;
+            font-weight: 100;
+            line-height: 1.6;
+            color: var(--bg);
+        }
+
+        .event p a {
+            line-height: 0.7;
+            display: inline-block;
+            padding: 1rem 2rem;
+            font-size: 0.7rem;
+            color: #010101;
+            background-color: var(--primary);
+            border-radius: 0.7rem;
+            box-shadow: 1px 1px 3px rgba(1,1,3, 0.5);
+            text-decoration: none;
+        }
+
+        .event .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 5rem;
+            justify-content: center;
+        }
+
+        .event .row .event-card {
+            text-align: center;
+            padding-bottom: 4rem;
+        }
+
+        .event .row .event-card img {
+            border-radius: 70%;
+            width: 80%;
+        }
+
+        .event .row .event-card .event-card-title {
+            margin: 0.9rem auto 0.7rem;
+        }
+
+        .event .row .event-card .event-card-price p {
+            font-family: monserratreguler ;
+            color: #010101;
+        }
+
+        .event .textbox {
+            border: 1px solid orange;
+            background-color: #f3f3f3;
+            border-radius: 0.5rem;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        
+        .event .textbox p {
+            font-size: 18px;
+            text-align: justify;
+        }
+        
+        /* Contact Section */
+        .footer {
+            display: flex;
+            background-image: linear-gradient(319deg, rgb(98, 241, 79) 0%, #4fc45d 37%, #42b37a 100%);
+            padding: 1rem ;
+            margin-top: 1rem;
+            justify-content: space-around;
+        }
+
+        .footer a {
+            color: var(--bg); /* Set the link color */
+            text-decoration: none; /* Remove the underline */
+        }
+
+        .footer a:hover {
+            cursor: pointer;
+            color: var(--primary);
+        }
+
+        .footer h4 {
+            margin-bottom: 20px; /* Add some space below the headings */
+            text-align: center;
+            margin: 1.8rem;
+        }
+
+        .footer .row map{
+            flex: 1 1 45rem;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .footer .Socials {
+            padding: 1rem 0;
+            width: 100%;
+        }
+
+        .footer .Socials img {
+            max-width: 1000%;
+            margin: 0.7rem;
+        }
+
+        .footer .Socials .row {
+        
+        }
+
+        .footer .Socials .links1, .footer .Socials .links2, .footer .Socials .links3, .footer .Socials .links4, .footer .Socials .links5, .footer .Socials .links6 {
+            float: left;
+        }
+
+/* Responsive Breakpoint*/
+/* Size Dekstop */
+@media screen and (max-width: 1366px){
+
+}   
+
+/* Size Tablet */
+@media screen and (max-width: 758px){
+    
+    .about .row1 {
+        flex-wrap: wrap;
+    }
+
+    .about .row1 .about-img1 img {
+        height: 24rem;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .about .row1 .content {
+        padding: 0;
+    }
+
+    .about .row1 .content h3 {
+        margin-top: 1rem;
+        font-size: 2rem;
+    }
+
+    .about .row2 {
+        flex-wrap: wrap;
+    }
+
+    .about .row2 .about-img2 img {
+        height: 24rem;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .about .row2 .berita2 {
+        padding: 0;
+    }
+
+    .about .row2 .berita2 h3 {
+        margin-top: 1rem;
+        font-size: 2rem;
+    }
+
+    .about .row3 {
+        flex-wrap: wrap;
+    }
+
+    .about .row3 .about-img3 img {
+        height: 24rem;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .about .row3 .berita3 {
+        padding: 0;
+    }
+
+    .about .row3 .berita3 h3 {
+        margin-top: 1rem;
+        font-size: 2rem;
+    }
+
+}
+
+/* Size Hp */
+    @media screen and (max-width: 576px){
+        .menu-toogle {
+            display: flex;
+        }
+        
+        nav ul {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 80%;
+        height: 100vh;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgb(91, 214, 74);
+        transform: translateX(100%);
+        transition: all 1s;
+        opacity: 0;
+        }
+
+        nav ul.slide {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .hero .content p {
+            justify-content: center;
+        }
+            
+        .about .row1 .content a {
+            margin-bottom: 7rem;
+            line-height: 0.7;
+            display: inline-block;
+            padding: 1rem 2rem;
+            font-size: 0.7rem;
+            color: #010101;
+            background-color: var(--primary);
+            border-radius: 0.7rem;
+            box-shadow: 1px 1px 3px rgba(1,1,3, 0.5);
+            text-decoration: none;
+        } 
+
+        .about .row3 .about-img3 img {
+            margin-top: 4rem; 
+        }
+
+} 
+    </style>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="/page/src/websitepage/importphoto/logo.png" alt="logo" />
+        </div>
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <div class="dropdown-btn">Jelajahi &#9660;</div>
+                <div class="dropdown-content">
+                    <a href="#Jelajah Bukit">Jelajah Bukit</a>
+                    <a href="#Galeri">Galeri</a>
+                    <a href="#Rekomendasi">Rekomendasi</a>
+                    <a href="#Profile">Profile</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <div class="dropdown-btn">Reservasi &#9660;</div>
+                <div class="dropdown-content">
+                    <a href="#TiketMasuk">Tiket Masuk</a>
+                    <a href="#MejaCafe">Meja Cafe</a>
+                    <a href="#Riwayat">Riwayat</a>
+                </div>
+            </li>
+            <li><a href="#informasi">Informasi</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+
+        <script>
+            function navigateTo(page) {
+                window.location.href = page;
+            }
+    
+            document.querySelector('.dropdown-content a[href="#Jelajah Bukit"]').addEventListener('click', function () {
+                navigateTo('jelajah-bukit.html');
+            });
+            document.querySelector('.dropdown-content a[href="#Galeri"]').addEventListener('click', function () {
+            navigateTo('galeri.html');
+            });
+
+            document.querySelector('.dropdown-content a[href="#Rekomendasi"]').addEventListener('click', function () {
+            navigateTo('rekomendasi.html');
+            });
+            document.querySelector('.dropdown-content a[href="#About Us"]').addEventListener('click', function () {
+            navigateTo('Abous Us.html');
+            });
+        </script>
+
+        <script>
+            document.querySelector('.dropdown-content a[href="#TiketMasuk"]').addEventListener('click', function () {
+                navigateTo('tiket-masuk.html'); // Replace 'tiket-masuk.html' with the actual URL for Tiket Masuk
+            });
+
+            document.querySelector('.dropdown-content a[href="#MejaCafe"]').addEventListener('click', function () {
+                navigateTo('meja-cafe.html'); // Replace 'meja-cafe.html' with the actual URL for Meja Cafe
+            });
+
+            document.querySelector('.dropdown-content a[href="#Riwayat"]').addEventListener('click', function () {
+                navigateTo('riwayat.html'); // Replace 'riwayat.html' with the actual URL for Riwayat
+            });
+        </script>
+
+        <div class="menu-toogle">
+            <input type="checkbox"></input>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Berita dan Event Section Start -->
+    <section class="hero" id="home">
+        <main class="content">
+            <!-- <p>Di Website Wisata Alam Bukit Panyangrayan</p> -->
+        </main>
+    </section>
+    <!-- Berita dan Event Section End -->
+
+    <!-- Berita Section Start -->
+    <section class="about">
+        <h2><span>Berita</span></h2> 
+
+        <div class="row1">
+            <div class="about-img1">
+                <img src="/page/src/websitepage/importphoto/berita1.jpg" alt="Berita Terbaru Tasikmalaya">
+            </div>
+            <div class="content">
+                <h5>detik.com</h5>
+                <h4>Jumat, 10 November 18:00 WIB</h4>   
+                <h3>Ribuan Umat Muslim Tasikmalaya Gelar Aksi Solidaritas Bela Palestina, Galang Dana dan Long March Keliling Kota</h3>
+                <p>Ribuan masyarakat Kota Tasikmalaya turun ke jalan mengikuti aksi solidaritas untuk Palestina, Jumat (10/11/2023)</p>  
+                <a href="https://www.detik.com/jabar/berita/d-6980981/ribuan-warga-tasikmalaya-galang-dana-dan-long-march-untuk-palestina" class="linked">Baca Selengkapnya</a>
+            </div>
+        </div>
+
+        <div class="row2">
+            <div class="about-img2">
+                <img src="/page/src/websitepage/importphoto/berita2.jpeg" alt="Berita Terbaru Tasikmalaya">
+            </div>
+            <div class="berita2">
+                <h5>CNN.News</h5>
+                <h4>Jumat, 10 November 21:00 WIB</h4>   
+                <h3>Warga Jalan Kaki Tasikmalaya-Bandung demi Aksi Palestina</h3>
+                <p>Ribuan masyarakat Kota Tasikmalaya turun ke jalan mengikuti aksi solidaritas untuk Palestina, Jumat (10/11/2023)</p>
+                <a href="https://www.cnnindonesia.com/nasional/20210522141032-20-645651/warga-jalan-kaki-tasikmalaya-bandung-demi-aksi-palestina" class="linked">Baca Selengkapnya</a>
+            </div>
+        </div>
+
+        <div class="row3">
+            <div class="about-img3">
+                <img src="/page/src/websitepage/importphoto/berita3.jpg" alt="Berita Terbaru Tasikmalaya">
+            </div>
+            <div class="berita3">
+                <h5>Fokus Jabar</h5>
+                <h4>Jumat, 10 November 23:00 WIB</h4>   
+                <h3>Aksi Bela Palestina di Kota Tasikmalaya, Donasi Terkumpul Rp 60 Juta</h3>
+                <p>Ribuan masyarakat Kota Tasikmalaya turun ke jalan mengikuti aksi solidaritas untuk Palestina, Jumat (10/11/2023)</p>
+                <a href="https://www.insiden24.com/ragam/39610817713/aksi-solidaritas-bela-palestina-di-kota-tasikmalaya-keluarga-pengusaha-kain-azad-lelang-mobil-kesayangannya" class="linked">Baca Selengkapnya</a>
+            </div>
+        </div>
+    <!-- Berita Section End -->
+
+    <!-- Event Section Start -->
+    <!-- <section class="event">
+        <h2>Event</h2> 
+            <div class="row">
+                <div class="textbox1">
+                    <p>𝐀𝐫𝐞 𝐘𝐨𝐮 𝐑𝐞𝐚𝐝𝐲 𝐏𝐨𝐬𝐬𝐞𝐬?<br>
+                        ⚡ Wardah UV Shield Pound Party x Virtue x Siloka Coffee⚡<br>
+                        with Pro Gina x Pro Rini<br>
+                        🗓️ Sunday,  12 November 2023<br>
+                        📍 Siloka 2 Indihiang<br>
+                        🕖 07.00<br>
+                        👕 Tosca / Baby Blue<br>
+                        You will get:<br>
+                        - Free Product Wardah<br>
+                        - Free Siloka Coffee<br>
+                        - Fresh fruit from Buah Segar Tasik<br>
+                        - Free Skincheck<br>
+                        - UV Check<br>
+                        - Voucher Bakmie Wong Soegih<br>
+                        - Doorprize Wardah<br>
+                        - Doorprize Nuyok Pizza</br>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfPfdzWcQiSBQ7yxHdh2-TJSvr6HIH0wk3dRkgnGfteWYAiWg/viewform?fbclid=IwAR3J9sGz7TVqN92ATBdn4i4GpvcZ240mQ8LyZ3Y1vXIN0lhR3agX_OgOQvo" class="regist"> Tap link here for registration</a><br>
+                        (harap datang 1 jam sebelum untuk regitstrasi ulang)<br>
+                        See you there posses 
+                        Don’t miss it or you will regret it !
+                        ⚡<br>
+                    </p>
+                </div>
+                    <div class="event-card">
+                        <img src="/page/src/websitepage/importphoto/event1.png" alt="Event1" class="event-card-img">
+                        <h3 class="event-card-title">- Event 12 Nov 2023 07:00 WIB sd Selesai-</h3>
+                        <p class="event-card-price">IDR 65.000</p>
+                    </div>
+                    
+                <div class="textbox2">
+                    <p>
+                        Akhirnya Keluar Juga Line Up @soundroomtour di Tasikmalaya<br>
+                        ( @ruangide.official ) @officialbirubaru @blckhorses @lor.updates<br>
+                        @tabraklari.nih @tigerworkofficial @lucymeetdopamine 
+                        Hayu beli tiketnya sekarang jugaa !!!
+                    </p>
+                </div>
+                
+                    <div class="event-card">
+                        <img src="/page/src/websitepage/importphoto/event2.png" alt="Event2" class="event-card-img">
+                        <h3 class="event-card-title">- Event 15 Nov 2023 -</h3>
+                        <p class="event-card-price">Regist IDR 40.000</p>
+                    </div>
+
+                <div class="textbox3">
+                <p>
+                        Hallo Semuanya👋🏼<br>
+                        Mau mengundang semuanya nih untuk hadir ke Pameran Diarsip📢<br>
+                        Pameran ini diselenggarakan oleh Himpunan Mahasiswa Desain Produk Industri UPI, 
+                        Pameran Diarsip ini berupa Pameran Karya, Pentas Seni, Workshop, Games, Visual Reality, 
+                        Photobooth, dan lainnya, acara ini diselenggarakan pada:
+                        🗓️Hari, Tanggal: Sabtu-Minggu, 11-12 November 2023<br>
+                        ⏰Pukul: 08.00 WIB sd Selesai<br>
+                        📍Tempat: GCC Tasikmalaya<br>
+                        Acara: Pameran Karya dan Pentas Seni, dan acara lain<br>
+                        📌HTM Pameran: Free<br>
+                        🪄Daftar Workshop: <a href="//bit.ly/workshopdiarsip2023">Yuk Daftar!</a><br>
+                        Ditunggu kehadirannya semua!!🤩🎉<br>
+                </p>
+                </div>
+                    <div class="event-card">
+                        <img src="/page/src/websitepage/importphoto/event3.png" alt="Event3" class="event-card-img">
+                        <h3 class="event-card-title">- Event 11-12 Nov 2023 08:00 WIB sd Selesai-</h3>
+                        <p class="event-card-price">IDR 65.000</p>
+                    </div>
+                <div class="textbox4">
+                    <p>
+                        𝗕𝗦𝗜 𝗙𝗟𝗔𝗦𝗛 𝗖𝗨𝗟𝗧𝗨𝗥𝗘 𝗙𝗘𝗦𝗧𝗜𝗩𝗔𝗟<br>
+
+                        𝗥𝗲𝗮𝗱𝘆 𝘁𝗼 𝗟𝗲𝘃𝗲𝗹 𝗨𝗽? 🚀 𝗝𝗼𝗶𝗻 𝘁𝗵𝗲 𝘂𝗹𝘁𝗶𝗺𝗮𝘁𝗲 𝗰𝗼𝗺𝗽𝗲𝘁𝗶𝘁𝗶𝗼𝗻 𝗮𝗻𝗱 𝘀𝗵𝗼𝘄 𝗼𝗳𝗳 𝘆𝗼𝘂𝗿 𝘀𝗸𝗶𝗹𝗹𝘀 𝗶𝗻 𝗕𝗦𝗜 𝗙𝗟𝗔𝗦𝗛 𝗖𝗨𝗟𝗧𝗨𝗥𝗘 𝗙𝗘𝗦𝗧𝗜𝗩𝗔𝗟.
+
+                        𝗜𝘁’𝘀 𝘁𝗶𝗺𝗲 𝘁𝗼 𝗴𝗲𝘁 𝗿𝗲𝗮𝗱𝘆 𝘁𝗼 𝗯𝗿𝗶𝗻𝗴 𝘆𝗼𝘂𝗿 𝗳𝗮𝘃𝗼𝗿𝗶𝘁𝗲 𝗰𝗵𝗮𝗿𝗮𝗰𝘁𝗲𝗿𝘀 𝘁𝗼 𝗹𝗶𝗳𝗲, 𝗰𝗿𝗲𝗮𝘁𝗲 𝗺𝗶𝗻𝗱-𝗯𝗹𝗼𝘄𝗶𝗻𝗴 𝗱𝗲𝘀𝗶𝗴𝗻𝘀 𝗰𝗵𝗮𝗿𝗮𝗰𝘁𝗲𝗿, 𝗮𝗻𝗱 𝗱𝗮𝗻𝗰𝗲 𝗹𝗶𝗸𝗲 𝘁𝗵𝗲𝗿𝗲’𝘀 𝗻𝗼 𝘁𝗼𝗺𝗼𝗿𝗿𝗼𝘄! 💃🕺
+
+                        𝗪𝗵𝗼 𝘄𝗶𝗹𝗹 𝘀𝘁𝗲𝗮𝗹 𝘁𝗵𝗲 𝘀𝗽𝗼𝘁𝗹𝗶𝗴𝗵𝘁 𝗮𝗻𝗱 𝗯𝗲𝗰𝗼𝗺𝗲 𝘁𝗵𝗲 𝘂𝗹𝘁𝗶𝗺𝗮𝘁𝗲 𝘁𝗿𝗶𝗽𝗹𝗲-𝘁𝗵𝗿𝗲𝗮𝘁 𝗰𝗵𝗮𝗺𝗽𝗶𝗼𝗻? 𝗝𝗼𝗶𝗻 𝘁𝗵𝗲 𝗲𝗽𝗶𝗰 𝗷𝗼𝘂𝗿𝗻𝗲𝘆 𝗼𝗳 𝗰𝗿𝗲𝗮𝘁𝗶𝘃𝗶𝘁𝘆 𝗮𝗻𝗱 𝘁𝗮𝗹𝗲𝗻𝘁 𝗮𝘁 𝗕𝗦𝗜 𝗙𝗟𝗔𝗦𝗛 𝗖𝗨𝗟𝗧𝗨𝗥𝗘 𝗙𝗘𝗦𝗧𝗜𝗩𝗔𝗟.
+
+                        𝗹𝗶𝗻𝗸 𝗿𝗲𝗴𝗶𝘀𝘁𝗿𝗮𝘁𝗶𝗼𝗻 <a href="//linktr.ee/bsievent.tasikmalaya" class="Linked">Info Lebih lanjut</a>
+
+                        [𝗮 𝗿𝗲𝗽𝗼𝘀𝘁 𝘄𝗶𝗹𝗹 𝗯𝗲 𝗮𝗽𝗽𝗿𝗲𝗰𝗶𝗮𝘁𝗲𝗱!]<br>
+                    </p>
+                </div>
+                    <div class="event-card">
+                        <img src="/page/src/websitepage/importphoto/event4.png" alt="Event4" class="event-card-img">
+                        <h3 class="event-card-title">- Event 12 Nov 2023 08:00 WIB sd 18:00 WIB</h3>
+                        <p class="event-card-price">-Free Register- IDR 10.000 sd IDR 20.000 MD&DC-</p>
+                    </div>
+            </div>
+    </section> -->
+<!-- Event Section End -->
+
+    <!-- Footer Section Start-->
+    <section class="footer" id="cta"> 
+        <div class="Socials">
+                <img src="/page/src/websitepage/importphoto/logo.png" alt="footer" />
+                <div class="icon"> 
+                    <img src="/page/src/websitepage/importphoto/instagram.png" alt="footer" class="bx bxl-instagram"/>
+                    <img src="/page/src/websitepage/importphoto/facebook.png" alt="footer" class="bx bxl-facebook"/>
+                    <img src="/page/src/websitepage/importphoto/whatsapp.png" alt="footer" class="bx bx-whatsapp"/>
+                </div>
+                <div class="iconsb">
+                    <img src="/page/src/websitepage/importphoto/pin.png" alt="footer" class="bx bxl-pin">
+                    <p>Kecamatan Sukaraja, Kabupaten Tasikmalaya, Jawa - Barat, 46183 </p>
+                </div>
+                <div class="iconsbo">
+                    <img src="/page/src/websitepage/importphoto/email.png" alt="footer" class="bx bxl-email">
+                    <p>akbarsaepulrizal12404@gmail.com</p>
+                </div>
+                <div class="iconbox">
+                    <img src="/page/src/websitepage/importphoto/phone-call.png" alt="footer" class="bx bxl-phonecell">
+                    <p>+ 62 81510941558</p>
+                </div>
+                <!-- <div class="row">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.1613508762543!2d108.175649074201!3d-7.4473942733877445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e65f9e7f9a6500b%3A0xbad2ab4a702f44c1!2sBukit%20Panyangrayan!5e0!3m2!1sen!2sid!4v1699866364593!5m2!1sen!2sid" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map"></iframe>
+                </div> -->
+
+                <div class="links1">
+                    <h4>Home</h4>
+                </div>
+        
+                <div class="links2">
+                    <h4>Jelajah Bukit</h4>
+                    <li><a href="#">Area Keluarga</a></li>
+                    <li><a href="#">Area Kafe</a></li>
+                    <li><a href="#">Area Foto</a></li>
+                    <li><a href="#">Camping Ground</a></li>
+                    <li><a href="#">About</a></li>
+                </div>
+        
+                <div class="links3">
+                    <h4>Galeri</h4>
+                    <li><a href="#">Foto</a></li>
+                    <li><a href="#">Video</a></li>
+                </div>
+        
+                <div class="links4">
+                    <h4>Reservasi</h4>
+                    <li><a href="#">Booking Ticket</a></li>
+                    <li><a href="#">Booking Kafe</a></li>
+                </div>
+        
+                <div id="about" class="links5" >
+                    <h4>Informasi</h4>
+                    <li><a href="#">Berita</a></li>
+                    <li><a href="#">Event</a></li>
+                </div>
+        
+                
+                <div class="links6">
+                    <h4>Rekomendasi</h4>
+                    <li><a href="#">Hotel</a></li>
+                    <li><a href="#">Restaurant</a></li>
+                    <li><a href="#">Wisata</a></li>
+                </div>
+                
+        </div>
+    </section>
+    <!-- Footer Section End-->
+
+    <!-- Include Js -->
+    <script src="script.js"></script>
+</body>
+</html>
